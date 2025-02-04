@@ -1,12 +1,12 @@
-name: Update serialized data on pecha.org
+name: Update Catalog on Push
 
 on:
   push:  # Runs on every push
 
 jobs:
-  serialize_and_publish:
+  update_catalog:
     runs-on: ubuntu-latest
-    if: contains(github.event.head_commit.message, 'pecha update')  # Runs only if commit message contains "pecha update"
+    if: contains(github.event.head_commit.message, 'pecha update')
     
     steps:
     - name: Checkout repository
@@ -20,9 +20,11 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install requests PyGithub pathlib GitPython pyyaml git+https://github.com/OpenPecha/toolkit-v2.git git+https://github.com/OpenPecha/pecha_uploader.git
+        pip install requests PyGithub pathlib GitPython pyyaml git+https://github.com/OpenPecha/toolkit-v2.git git+https://github.com/OpenPecha/pecha_uploader.git subprocess
 
     - name: Serialize and Publish on pecha.org
       env:
-        PECHA_API_KEY: ${{ secrets.PECHA_API_KEY }}
-      run: python .github/workflows/scripts.py
+        PECHA_API_KEY: ${{ secrets.PECHA_API_KEY }}  # ✅ Pass the secret here
+      run: |
+        echo "PECHA_API_KEY is set"
+        python .github/workflows/scripts.py  # ✅ Run script with the environment variable
