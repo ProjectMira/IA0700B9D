@@ -22,7 +22,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install requests PyGithub pathlib GitPython pyyaml git+https://github.com/OpenPecha/toolkit-v2.git git+https://github.com/OpenPecha/pecha_uploader.git
 
-    - name: Serialize and Publish on pecha.org
+    - name: Serialize updated and Publish on pecha.org
       run: |
         export PECHA_API_KEY=${{ secrets.PECHA_API_KEY }}  # Explicitly export it
         python .github/workflows/scripts.py
