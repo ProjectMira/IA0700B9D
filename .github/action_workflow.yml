@@ -1,23 +1,28 @@
-name: update catalog every sunday
+name: Update Catalog on Push
 
 on:
-  push:
+  push:  # Runs on every push
 
 jobs:
-  if: ( github.event.commits[0].message == 'pecha update' )
-    name: Serialize and Publish on pecha.org
+  serialize_and_publish:
     runs-on: ubuntu-latest
+    if: contains(github.event.head_commit.message, 'pecha update')  # Runs only if commit message contains "pecha update"
+    
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
     - name: Install Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.10' 
+        python-version: '3.10'
+
     - name: Install dependencies
-      run: 'python -m pip install --upgrade pip pip install requests PyGithub pathlib GitPython pyyaml git+https://github.com/OpenPecha/toolkit-v2.git git+https://github.com/OpenPecha/pecha_uploader.git subproces'
-        
-    - name: Serialize and publish on pecha.org
-      secrets:
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests PyGithub pathlib GitPython pyyaml git+https://github.com/OpenPecha/toolkit-v2.git git+https://github.com/OpenPecha/pecha_uploader.git subprocess
+
+    - name: Serialize and Publish on pecha.org
+      env:
         PECHA_API_KEY: ${{ secrets.PECHA_API_KEY }}
       run: python .github/scripts.py
-
