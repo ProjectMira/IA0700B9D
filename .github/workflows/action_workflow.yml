@@ -20,7 +20,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install requests PyGithub pathlib GitPython pyyaml git+https://github.com/OpenPecha/toolkit-v2.git git+https://github.com/OpenPecha/pecha_uploader.git subprocess
+        pip install requests PyGithub pathlib GitPython pyyaml git+https://github.com/OpenPecha/toolkit-v2.git git+https://github.com/OpenPecha/pecha_uploader.git
 
     - name: Serialize and Publish on pecha.org
       env:
