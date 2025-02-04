@@ -23,8 +23,6 @@ jobs:
         pip install requests PyGithub pathlib GitPython pyyaml git+https://github.com/OpenPecha/toolkit-v2.git git+https://github.com/OpenPecha/pecha_uploader.git
 
     - name: Serialize and Publish on pecha.org
-      env:
-        PECHA_API_KEY: ${{ secrets.PECHA_API_KEY }}  # ✅ Pass the secret here
       run: |
-        echo "PECHA_API_KEY is set"
-        python .github/workflows/scripts.py  # ✅ Run script with the environment variable
+        export PECHA_API_KEY=${{ secrets.PECHA_API_KEY }}  # Explicitly export it
+        python .github/workflows/scripts.py
