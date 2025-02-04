@@ -1,7 +1,7 @@
 name: update catalog every sunday
 
 on:
-  push
+  push:
 
 jobs:
   if: ( github.event.commits[0].message == 'pecha update' )
