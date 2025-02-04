@@ -1,0 +1,45 @@
+{
+  "id": "IA0700B9D",
+  "title": {
+    "BO": "དགོངས་པ་རབ་གསལ་ལས་སེམས་བསྐྱེད་དྲུག་པ། ཤོ་ལོ་ཀ ༡-༦༤",
+    "EN": "Illuminating the Intent Chapter 6, verses 1 to 64"
+  },
+  "author": {
+    "BO": "ཙོང་ཁ་པ་བློ་བཟང་གྲགས་པ།",
+    "EN": "Tsongkhapa Lobzang Drakpa"
+  },
+  "imported": "2025-02-04T19:14:19.603329",
+  "source": "http://purl.bdrc.io/resource/WA1NLM688",
+  "toolkit_version": "0.0.1",
+  "parser": "GoogleDocTranslationParser",
+  "initial_creation_type": "google_docx",
+  "language": "en",
+  "source_metadata": {
+    "title_short": {
+      "BO": "དགོངས་པ་རབ་གསལ་ལས་སེམས་བསྐྱེད་དྲུག་པ། ཤོ་ལོ་ཀ ༡-༦༤",
+      "EN": "Illuminating the Intent Chapter 6, verses 1 to 64"
+    },
+    "title_long_clean": {
+      "BO": "དགོངས་པ་རབ་གསལ་ལས་སེམས་བསྐྱེད་དྲུག་པ། ཤོ་ལོ་ཀ ༡-༦༤"
+    },
+    "is_commentary_of": {
+      "BO": "དབུ་མ་འཇུག་པ་ལས་སེམས་བསྐྱེད་དྲུག་པ། ཤོ་ལོ་ཀ ༡-༦༤"
+    }
+  },
+  "bases": [
+    {
+      "3DC4": {
+        "source_metadata": {
+          "total_segments": 383
+        },
+        "base_file": "3DC4.txt"
+      }
+    }
+  ],
+  "copyright": {
+    "status": "Unknown",
+    "notice": "",
+    "info_url": null
+  },
+  "licence": "Unknown"
+}
