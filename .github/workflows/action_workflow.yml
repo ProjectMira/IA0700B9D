@@ -1,4 +1,4 @@
-name: Update Catalog on Push
+name: Update serialized data on pecha.org
 
 on:
   push:  # Runs on every push
